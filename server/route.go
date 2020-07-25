@@ -3,8 +3,7 @@ package server
 import (
 	"encoding/json"
 	"net/http"
-
-	secret
+	"secret"
 )
 
 func secretRoute(w http.ResponseWriter, r *http.Request) {

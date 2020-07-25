@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
+	log "github.com/sirupsen/logrus"
 	"os"
 	"os/signal"
-	server
-	log "github.com/sirupsen/logrus"
+	"server"
 )
 
 func setupLogger() {
