@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/pascencio/keeown-api/server"
+	server "github.com/pascencio/keeown-api/server"
 	log "github.com/sirupsen/logrus"
 )
 
