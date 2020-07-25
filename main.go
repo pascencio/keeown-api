@@ -4,8 +4,7 @@ import (
 	"context"
 	"os"
 	"os/signal"
-
-	server "github.com/pascencio/keeown-api/server"
+	server
 	log "github.com/sirupsen/logrus"
 )
 

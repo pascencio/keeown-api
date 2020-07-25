@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	secret "github.com/pascencio/keeown-api/secret"
+	secret
 )
 
 func secretRoute(w http.ResponseWriter, r *http.Request) {
