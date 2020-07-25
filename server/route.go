@@ -2,19 +2,23 @@ package server
 
 import (
 	"encoding/json"
-	"github.com/pascencio/keeown-api/secret"
 	"net/http"
+
+	"github.com/pascencio/keeown-api/secret"
 )
 
 func secretRoute(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		{
-			s := secret.GetSecret()
-			w.WriteHeader(http.StatusOK)
-			w.Header().Add("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(s)
-		}
+		s := secret.GetSecret()
+		w.WriteHeader(http.StatusOK)
+		w.Header().Add("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(s)
+	default:
+		w.WriteHeader(http.StatusBadRequest)
+		w.Header().Add("Content-Type", "application/json")
+		s := secret.Secret{}
+		json.NewEncoder(w).Encode(s)
 	}
 }
 
