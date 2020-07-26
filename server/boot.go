@@ -26,13 +26,13 @@ func Serve(c context.Context) (e error) {
 	s := &http.Server{
 		Handler: RouteHandler(),
 	}
+	l, e := net.Listen("unix", socketFile)
+	if e != nil {
+		log.Error("Error starting server", e)
+		return
+	}
+	defer l.Close()
 	go func() {
-		l, e := net.Listen("unix", socketFile)
-		if e != nil {
-			log.Error("Error starting server", e)
-			return
-		}
-		defer l.Close()
 		s.Serve(l)
 	}()
 	f, e := os.Create(startedFile)
