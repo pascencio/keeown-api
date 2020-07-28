@@ -2,10 +2,11 @@ package main
 
 import (
 	"context"
-	"github.com/pascencio/keeown-api/server"
-	log "github.com/sirupsen/logrus"
 	"os"
 	"os/signal"
+
+	"github.com/pascencio/keeown-api/server"
+	log "github.com/sirupsen/logrus"
 )
 
 func setupLogger() {
